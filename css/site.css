@@ -11,7 +11,8 @@ body {
   color: var(--tinta);
   font-family: var(--sans);
   font-weight: 400;
-  line-height: 1.5;
+  font-size: 1rem;
+  line-height: 1.55;
   background: var(--blanco);
 }
 
@@ -21,17 +22,19 @@ a { color: inherit; text-decoration: none; }
 
 button, input, textarea, select { font: inherit; color: inherit; }
 
-/* Header - logo and section jumps. */
+/* Header - fixed at top for all scroll positions. */
 .site-header {
   position: fixed;
-  inset: 0 0 auto;
-  z-index: 40;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
   height: var(--header-h);
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 28px;
-  background: color-mix(in srgb, var(--blanco) 88%, transparent);
+  background: color-mix(in srgb, var(--blanco) 92%, transparent);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid color-mix(in srgb, var(--teal) 25%, transparent);
 }
@@ -55,13 +58,14 @@ button, input, textarea, select { font: inherit; color: inherit; }
 }
 
 .brand-text strong {
-  font-family: var(--serif);
-  font-weight: 500;
-  font-size: 18px;
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: 20px;
   color: var(--azul);
 }
 
 .brand-text span {
+  font-family: var(--sans);
   font-size: 11px;
   letter-spacing: 0.04em;
   color: var(--teal);
@@ -70,6 +74,7 @@ button, input, textarea, select { font: inherit; color: inherit; }
 .site-nav {
   display: flex;
   gap: 22px;
+  font-family: var(--sans);
   font-size: 13px;
   font-weight: 500;
 }
@@ -80,7 +85,7 @@ button, input, textarea, select { font: inherit; color: inherit; }
 .section {
   min-height: 100vh;
   min-height: 100dvh;
-  padding: calc(var(--header-h) + 28px) 28px 40px;
+  padding: calc(var(--header-h) + 28px) 28px calc(var(--footer-h) + 36px);
   position: relative;
 }
 
@@ -91,7 +96,8 @@ button, input, textarea, select { font: inherit; color: inherit; }
 }
 
 .kicker {
-  font-size: 12px;
+  font-family: var(--sans);
+  font-size: 11px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   font-weight: 500;
@@ -99,17 +105,26 @@ button, input, textarea, select { font: inherit; color: inherit; }
 }
 
 h1, h2, .display {
-  font-family: var(--serif);
-  font-weight: 500;
+  font-family: var(--display);
+  font-weight: 600;
   letter-spacing: -0.02em;
   line-height: 1.08;
 }
 
-h1 { font-size: clamp(40px, 7vw, 78px); color: var(--blanco); }
-h2 { font-size: clamp(30px, 4.4vw, 52px); color: var(--azul); margin: 8px 0 14px; }
+/* Italic marks - brand name and key words for a looser voice. */
+.mark,
+em.mark {
+  font-style: italic;
+  font-weight: inherit;
+  font-family: inherit;
+}
+
+h1 { font-size: clamp(40px, 6.8vw, 78px); color: var(--blanco); }
+h2 { font-size: clamp(30px, 4.2vw, 50px); color: var(--azul); margin: 8px 0 14px; }
 
 .lede {
   max-width: 48ch;
+  font-size: 1.05rem;
   color: color-mix(in srgb, var(--tinta) 78%, white);
 }
 
@@ -157,12 +172,21 @@ h2 { font-size: clamp(30px, 4.4vw, 52px); color: var(--azul); margin: 8px 0 14px
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  padding: 0 28px calc(48px + env(safe-area-inset-bottom));
+  padding: var(--header-h) 28px calc(var(--footer-h) + 36px);
   max-width: 1180px;
   margin: 0 auto;
 }
 
 .hero-content .kicker { color: var(--agua); }
+
+.hero-lede {
+  max-width: 42ch;
+  margin-top: 14px;
+  color: #e8f6f6;
+  font-family: var(--sans);
+  font-size: clamp(1rem, 1.6vw, 1.15rem);
+  line-height: 1.5;
+}
 
 .hero-actions {
   display: flex;
@@ -178,6 +202,8 @@ h2 { font-size: clamp(30px, 4.4vw, 52px); color: var(--azul); margin: 8px 0 14px
   border: none;
   border-radius: var(--radio);
   padding: 13px 20px;
+  font-family: var(--sans);
+  font-size: 0.95rem;
   font-weight: 500;
   cursor: pointer;
   transition: transform 0.2s var(--ease), background 0.2s var(--ease);
@@ -199,7 +225,7 @@ h2 { font-size: clamp(30px, 4.4vw, 52px); color: var(--azul); margin: 8px 0 14px
 .hero-dots {
   position: absolute;
   right: 28px;
-  bottom: 48px;
+  bottom: calc(var(--footer-h) + 20px);
   z-index: 3;
   display: flex;
   gap: 8px;
@@ -259,6 +285,7 @@ h2 { font-size: clamp(30px, 4.4vw, 52px); color: var(--azul); margin: 8px 0 14px
 }
 
 .field label {
+  font-family: var(--sans);
   font-size: 12px;
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -274,6 +301,8 @@ h2 { font-size: clamp(30px, 4.4vw, 52px); color: var(--azul); margin: 8px 0 14px
   background: var(--blanco);
   border-radius: var(--radio);
   padding: 12px 14px;
+  font-family: var(--sans);
+  font-size: 0.95rem;
 }
 
 .field input:focus,
@@ -368,20 +397,22 @@ h2 { font-size: clamp(30px, 4.4vw, 52px); color: var(--azul); margin: 8px 0 14px
 }
 
 .seguro-panel h3 {
-  font-family: var(--serif);
+  font-family: var(--display);
   font-size: clamp(28px, 3.4vw, 44px);
   color: var(--azul);
-  font-weight: 500;
+  font-weight: 600;
   line-height: 1.1;
   margin: 10px 0 14px;
 }
 
 .seguro-panel p {
-  max-width: 34ch;
-  font-size: clamp(15px, 1.4vw, 18px);
+  max-width: 36ch;
+  font-family: var(--sans);
+  font-size: clamp(0.95rem, 1.3vw, 1.05rem);
 }
 
 .seguro-index {
+  font-family: var(--sans);
   font-size: 13px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -494,15 +525,97 @@ h2 { font-size: clamp(30px, 4.4vw, 52px); color: var(--azul); margin: 8px 0 14px
 
 .contact-lines a:hover { color: var(--agua); }
 
+/* Cierre - closing note and socials under the map block. */
+.cierre {
+  margin-top: 36px;
+  padding: clamp(28px, 4vw, 44px) clamp(20px, 3vw, 36px);
+  border-radius: 8px;
+  background: var(--agua);
+  display: grid;
+  justify-items: center;
+  gap: 22px;
+  text-align: center;
+}
+
+.cierre-copy {
+  max-width: 46ch;
+  font-size: clamp(1.05rem, 1.8vw, 1.25rem);
+  line-height: 1.55;
+  color: var(--tinta);
+}
+
+/* Social icons - Instagram, Facebook, WhatsApp. */
+.socials {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.social {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid color-mix(in srgb, var(--azul) 35%, white);
+  background: var(--blanco);
+  color: var(--azul);
+  transition: background 0.2s var(--ease), color 0.2s var(--ease), transform 0.2s var(--ease);
+}
+
+.social svg {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+}
+
+.social:hover {
+  background: var(--azul);
+  color: var(--blanco);
+  transform: translateY(-1px);
+}
+
+.socials-cierre .social {
+  width: 48px;
+  height: 48px;
+}
+
+/* Footer bar - fixed at bottom with address and socials. */
 .site-footer {
-  padding: 18px 28px 28px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  min-height: var(--footer-h);
+  padding: 12px 28px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   gap: 16px;
   flex-wrap: wrap;
   font-size: 13px;
   color: var(--teal);
-  background: var(--niebla);
+  background: color-mix(in srgb, var(--niebla) 94%, transparent);
+  backdrop-filter: blur(10px);
+  border-top: 1px solid color-mix(in srgb, var(--teal) 25%, transparent);
+}
+
+.footer-copy {
+  display: grid;
+  gap: 4px;
+}
+
+.socials-footer .social {
+  border-color: color-mix(in srgb, var(--teal) 45%, white);
+  background: var(--blanco);
+  color: var(--azul);
+}
+
+.socials-footer .social:hover {
+  background: var(--azul);
+  color: var(--blanco);
 }
 
 @media (max-width: 900px) {
@@ -514,6 +627,20 @@ h2 { font-size: clamp(30px, 4.4vw, 52px); color: var(--azul); margin: 8px 0 14px
     grid-template-columns: 1fr;
   }
 
-  .hero-content { padding-bottom: 88px; }
+  :root { --footer-h: 120px; }
+
   .hero-dots { left: 28px; right: auto; }
+
+  .site-footer {
+    padding: 10px 16px calc(10px + env(safe-area-inset-bottom));
+  }
+
+  .footer-copy {
+    flex: 1 1 180px;
+  }
+
+  .socials-footer .social {
+    width: 38px;
+    height: 38px;
+  }
 }

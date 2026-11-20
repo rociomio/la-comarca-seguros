@@ -10,13 +10,14 @@
   --niebla: #e8f6f6;
   --sombra: rgba(22, 51, 51, 0.18);
 
-  /* Type - serif for brand voice, sans for UI and forms. */
-  --serif: "Fraunces", "Iowan Old Style", Georgia, serif;
+  /* Type - Kanit titles, Sora for body and UI. */
+  --display: "Kanit", "Segoe UI", sans-serif;
   --sans: "Sora", "Segoe UI", sans-serif;
 
   /* Layout - section rhythm and controls. */
   --gap: 12px;
   --radio: 4px;
   --header-h: 72px;
+  --footer-h: 76px;
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
 }
