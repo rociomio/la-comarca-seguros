@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>La Comarca · Agencia de seguros · El Bolsón</title>
+  <meta name="description" content="Patricia Jackiw, Agencia de seguros La Comarca. Cotizá auto, hogar, comercio y más en El Bolsón." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Sora:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/tokens.css" />
+  <link rel="stylesheet" href="css/site.css" />
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#inicio">
+      <img src="assets/logo/logo-la-comarca.png" alt="Logo La Comarca" width="46" height="46" />
+      <span class="brand-text">
+        <strong>La Comarca</strong>
+        <span>Agencia de seguros</span>
+      </span>
+    </a>
+    <nav class="site-nav" aria-label="Principal">
+      <a href="#cotizar">Cotizá</a>
+      <a href="#seguros">Seguros</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero - rotating banner every 3 seconds. -->
+    <section class="hero section" id="inicio" aria-label="Inicio">
+      <div class="hero-slides" data-banner>
+        <div class="hero-slide is-active" style="background-image:url('assets/banner/01.jpg')"></div>
+        <div class="hero-slide" style="background-image:url('assets/banner/02.jpg')"></div>
+        <div class="hero-slide" style="background-image:url('assets/banner/03.jpg')"></div>
+      </div>
+      <div class="hero-overlay" aria-hidden="true"></div>
+      <div class="hero-content">
+        <p class="kicker">Patricia Jackiw · El Bolsón</p>
+        <h1>Agencia de seguros<br />La Comarca</h1>
+        <p style="max-width:40ch;color:#e8f6f6;margin-top:14px;">Protección cercana para tu familia, tu casa, tu comercio y tu camino en la Comarca.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#cotizar">Cotizá tu seguro</a>
+          <a class="btn btn-ghost" href="#seguros">Ver coberturas</a>
+        </div>
+      </div>
+      <div class="hero-dots" data-banner-dots aria-label="Slides del banner"></div>
+    </section>
+
+    <!-- Cotizar - parallax background with short quote form. -->
+    <section class="section cotizar" id="cotizar">
+      <div class="cotizar-bg" data-parallax aria-hidden="true"></div>
+      <div class="section-inner">
+        <div class="cotizar-panel">
+          <div class="cotizar-copy">
+            <p class="kicker">Cotización</p>
+            <h2>Contanos qué necesitás proteger.</h2>
+            <p>Dejanos un mail o un teléfono y una consulta corta. Te respondemos desde la agencia en El Bolsón.</p>
+          </div>
+          <form class="quote-form" data-quote-form>
+            <div class="field">
+              <label for="seguro">Tipo de seguro</label>
+              <select id="seguro" name="seguro" required>
+                <option value="">Elegí una opción</option>
+                <option>Integral de comercio</option>
+                <option>Combinado familiar</option>
+                <option>Incendio</option>
+                <option>Caución para obras particulares</option>
+                <option>Caución para obras públicas</option>
+                <option>Accidentes personales</option>
+                <option>Responsabilidad civil eventos</option>
+                <option>Responsabilidad civil actividades recreativas</option>
+                <option>Seguros para bicicletas</option>
+                <option>Seguros de sepelio</option>
+                <option>Seguros de autos</option>
+                <option>Seguros de motos</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="contacto">Mail o teléfono</label>
+              <input id="contacto" name="contacto" type="text" inputmode="email" autocomplete="email" placeholder="tu@mail.com o 2944..." required />
+            </div>
+            <div class="field">
+              <label for="consulta">Consulta corta</label>
+              <textarea id="consulta" name="consulta" maxlength="280" placeholder="Ej: necesito cotizar el auto familiar..." required></textarea>
+            </div>
+            <button class="btn btn-primary" type="submit">Enviar consulta</button>
+            <p class="form-note">Por ahora el formulario queda listo en la web; después lo conectamos a mail o WhatsApp.</p>
+            <p class="form-status" data-form-status role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Seguros - image exits upward, copy enters from below. -->
+    <section class="section seguros" id="seguros">
+      <div class="section-inner" style="display:flex;flex-direction:column;flex:1;min-height:0;">
+        <div class="seguros-head">
+          <p class="kicker">Los seguros que ofrecemos</p>
+          <h2>Coberturas para la vida en la Comarca.</h2>
+        </div>
+
+        <div class="seguros-stage" data-seguros-stage>
+          <div class="seguros-media" data-seguros-media aria-hidden="true"></div>
+          <div class="seguros-copy" data-seguros-copy aria-live="polite"></div>
+        </div>
+
+        <div class="seguros-controls">
+          <div class="seguro-progress" aria-hidden="true"><span data-seguro-progress></span></div>
+          <div class="seguros-nav">
+            <button class="icon-btn" type="button" data-seguro-prev aria-label="Seguro anterior">↑</button>
+            <button class="icon-btn" type="button" data-seguro-next aria-label="Siguiente seguro">↓</button>
+          </div>
+        </div>
+
+        <ul class="seguro-list" data-seguro-list hidden>
+          <li data-image="assets/seguros/comercio.jpg" data-title="Integral de comercio" data-copy="Si tenés un local o un emprendimiento, esta cobertura cuida el stock, las instalaciones y la continuidad del negocio cuando algo falla."></li>
+          <li data-image="assets/seguros/familiar.jpg" data-title="Combinado familiar" data-copy="Tu casa es el centro de la familia. Protegé el hogar, los bienes y la tranquilidad de quienes viven bajo ese techo."></li>
+          <li data-image="assets/seguros/incendio.jpg" data-title="Incendio" data-copy="Un incendio puede cambiarlo todo en minutos. Esta póliza acompaña la reconstrucción y reduce el golpe económico."></li>
+          <li data-image="assets/seguros/caucion-particulares.jpg" data-title="Caución para obras particulares" data-copy="Para obras privadas que piden garantía: cumplí contratos con respaldo y seguí adelante con el proyecto."></li>
+          <li data-image="assets/seguros/caucion-publicas.jpg" data-title="Caución para obras públicas" data-copy="Cuando licitás o ejecutás obra pública, la caución es la llave para presentarte y cumplir sin frenar la obra."></li>
+          <li data-image="assets/seguros/accidentes.jpg" data-title="Accidentes personales" data-copy="Para el día a día, el trabajo o el deporte: un respaldo si un accidente frena tu actividad o tu ingreso."></li>
+          <li data-image="assets/seguros/rc-eventos.jpg" data-title="Responsabilidad civil eventos" data-copy="Organizás una fiesta, una feria o un show: esta cobertura responde si algo afecta a invitados o terceros."></li>
+          <li data-image="assets/seguros/rc-recreativas.jpg" data-title="Responsabilidad civil actividades recreativas" data-copy="Turismo, aventura o actividades al aire libre necesitan un paraguas legal frente a imprevistos con terceros."></li>
+          <li data-image="assets/seguros/bicicletas.jpg" data-title="Seguros para bicicletas" data-copy="En El Bolsón la bici es parte del paisaje. Asegurá tu rodado ante robo o daños y andá con más calma."></li>
+          <li data-image="assets/seguros/sepelio.jpg" data-title="Seguros de sepelio" data-copy="Una decisión de cuidado familiar: evitar gastos imprevistos y acompañar con previsión en un momento difícil."></li>
+          <li data-image="assets/seguros/autos.jpg" data-title="Seguros de autos" data-copy="Ruta 40, invierno o viaje a la montaña: tu auto necesita una cobertura acorde a cómo y dónde circulás."></li>
+          <li data-image="assets/seguros/motos.jpg" data-title="Seguros de motos" data-copy="Ágil para la Comarca, exigente ante un choque. Protegé tu moto y tu responsabilidad frente a terceros."></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Contacto - small map and agency details. -->
+    <section class="section contacto" id="contacto">
+      <div class="section-inner">
+        <p class="kicker">Estamos en El Bolsón</p>
+        <h2>Pasá por la agencia o escribinos.</h2>
+        <div class="contacto-grid" style="margin-top:22px;">
+          <div class="map-card">
+            <iframe
+              title="Mapa de Agencia La Comarca en El Bolsón"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              src="https://maps.google.com/maps?q=Av.%20Sarmiento%203238,%20El%20Bols%C3%B3n,%20R%C3%ADo%20Negro&z=16&output=embed">
+            </iframe>
+          </div>
+          <aside class="contact-card">
+            <div>
+              <p class="kicker">Patricia Jackiw</p>
+              <h2>La Comarca</h2>
+              <p>Agencia de seguros · atención personalizada en la zona.</p>
+            </div>
+            <div class="contact-lines">
+              <p>Avda. Sarmiento 3238<br />El Bolsón, Río Negro</p>
+              <a href="tel:+5492944000000" data-phone>Teléfono a confirmar</a>
+              <a href="mailto:hola@lacomarca.example" data-email>Mail a confirmar</a>
+              <a href="https://wa.me/5492944000000" target="_blank" rel="noopener" data-whatsapp>WhatsApp a confirmar</a>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Patricia Jackiw · Agencia de seguros “La Comarca”</p>
+    <p>Avda. Sarmiento 3238 · El Bolsón</p>
+  </footer>
+
+  <script src="js/site.js"></script>
+</body>
+</html>

@@ -1,0 +1,11 @@
+# Local / design-only - keep Intact screenshots and zips out of the public demo.
+moodboard/Captura*.png
+moodboard/Propuesta-visual-marca.zip
+moodboard/fotos/
+
+# OS and editor noise.
+.DS_Store
+Thumbs.db
+*.log
+.vscode/
+.idea/

@@ -1,0 +1,19 @@
+Imágenes de cada tipo de seguro
+===============================
+
+Reemplazá estos archivos con fotos propias (mismo nombre):
+
+  comercio.jpg
+  familiar.jpg
+  incendio.jpg
+  caucion-particulares.jpg
+  caucion-publicas.jpg
+  accidentes.jpg
+  rc-eventos.jpg
+  rc-recreativas.jpg
+  bicicletas.jpg
+  sepelio.jpg
+  autos.jpg
+  motos.jpg
+
+Recomendado: 1200px de ancho, encuadre horizontal.
